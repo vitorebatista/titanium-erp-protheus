@@ -1,0 +1,19 @@
+<Alloy>
+    <!--<NavigationGroup id="nav" platform="ios">-->
+    <Window id="winLocal" title="Localização" > <!-- class="container" modal="true"-->
+		<RightNavButton platform="ios" >
+			<Button onClick="addRegTPS">Inserir</Button>
+		</RightNavButton>    	
+  		<!--<Button id="btnAdd" onClick="addRegTPS" title="Inserir"  />-->
+		<TableView id="tblTPS" dataCollection="TPS">
+			<TableViewRow id="rowTPS" onClick="viewTPS">
+			   
+				<Label id="code" text="{TPS_CODLOC}"/>
+				<Label id="name" text="{TPS_NOME}"/>
+				<ImageView id="imgEdit" onClick="editRegTPS"/>
+			</TableViewRow>
+		</TableView>
+		   
+    </Window>
+ <!--</NavigationGroup>-->
+</Alloy>

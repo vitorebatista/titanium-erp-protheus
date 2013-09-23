@@ -1,0 +1,27 @@
+"#winLocal":{
+	layout: 'vertical',
+	background: '#fff',
+	color: '#fff' 
+	//barColor: '#a00'
+}
+
+"#rowTPS": {
+	height: '50dp',
+	backgroundColor: '#fff',
+	focusable: false
+},
+"#rowTPS[platform=ios]": {
+    selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+},
+"#code": {
+	left: 10
+}
+"#name": {
+	center: 0
+}
+"#imgEdit": {
+	image: '/red_x.png',
+	right: 0,
+	height: '50dp',
+	width: '50dp'
+}

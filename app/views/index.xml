@@ -1,0 +1,29 @@
+<!--<Alloy>
+	<Window onOpen="IndexOpen" class="container">
+		 --<!--<Widget src="com.appcelerator.bouncylogo" id="logo" /> ->
+		 <ImageView id="logo" image="/logo_ng.png" />
+		 
+		 <Button id="btnLocalizacao" onClick="Localizacao" title="Localização" top="180" width="90%" height="50" />
+		 <Button id="btnEspecialidade" onClick="Especialidade" title="Especialidade" top="250" width="90%" height="50" />
+	</Window>
+</Alloy>
+-->
+
+
+<Alloy>
+	<!-- iPad -->
+	<SplitWindow id="index" platform="ios" formFactor="tablet">
+		<Require src="master" id="master"/>
+		<Require src="detail" id="detail"/>
+	</SplitWindow>
+	
+	<!-- iPhone -->
+	<Window id="index" platform="ios" formFactor="handheld">
+	    <NavigationGroup id="navgroup">
+	        <Require src="master" id="master"/>
+	    </NavigationGroup>
+   	</Window>
+  
+  	<!-- Android -->
+    <Require id="master" src="master" platform="android"/>
+</Alloy>

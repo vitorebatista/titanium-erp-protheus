@@ -1,0 +1,14 @@
+"#index": {
+    height: Ti.UI.FILL,
+    top: "0dp",
+    fullscreen: false
+},
+".container": {
+	backgroundColor:"white"
+},
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}, 
+
