@@ -298,16 +298,7 @@ var cache = {
 
 module.exports.beforeModelCreate = function(config, name) {
     if (cache.config[name]) return cache.config[name];
-    if (false || "undefined" == typeof Ti.Database) throw "No support for Titanium.Database in MobileWeb environment.";
-    config.adapter.db_file && installDatabase(config);
-    if (!config.adapter.idAttribute) {
-        Ti.API.info('No config.adapter.idAttribute specified for table "' + config.adapter.collection_name + '"');
-        Ti.API.info('Adding "' + ALLOY_ID_DEFAULT + '" to uniquely identify rows');
-        config.columns[ALLOY_ID_DEFAULT] = "TEXT UNIQUE";
-        config.adapter.idAttribute = ALLOY_ID_DEFAULT;
-    }
-    cache.config[name] = config;
-    return config;
+    throw "No support for Titanium.Database in MobileWeb environment.";
 };
 
 module.exports.afterModelCreate = function(Model, name) {

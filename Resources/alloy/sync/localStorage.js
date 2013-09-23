@@ -6,9 +6,7 @@ function guid() {
     return S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4();
 }
 
-function InitAdapter() {
-    throw "localStorage persistence supported only with MobileWeb and Tizen.";
-}
+function InitAdapter() {}
 
 function Sync(method, model, opts) {
     function storeModel(data) {

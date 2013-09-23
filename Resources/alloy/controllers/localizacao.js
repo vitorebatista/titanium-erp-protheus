@@ -43,8 +43,9 @@ function Controller() {
     }
     function addRegTPS() {
         var controller = Alloy.createController("localizacao_incluir");
-        var win = controller.getView();
-        win.open();
+        {
+            controller.getView();
+        }
     }
     function editRegTPS() {
         alert("edit");
@@ -62,7 +63,6 @@ function Controller() {
     var __defers = {};
     $.__views.winLocal = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        navBarHidden: true,
         layout: "vertical",
         background: "#fff",
         color: "#fff",

@@ -6,23 +6,21 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.master = Alloy.createController("master", {
-        id: "master"
-    });
-    $.__views.master && $.addTopLevelView($.__views.master);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.master.on("localizacao", function() {
         var controller = Alloy.createController("localizacao");
-        var win = controller.getView();
-        win.open();
+        {
+            controller.getView();
+        }
     });
     $.master.on("especialidade", function() {
         var controller = Alloy.createController("especialidade");
-        var win = controller.getView();
-        win.open();
+        {
+            controller.getView();
+        }
     });
-    $.master.getView().open();
+    $.index.open();
     _.extend($, exports);
 }
 

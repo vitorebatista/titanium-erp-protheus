@@ -13,8 +13,6 @@ function Controller() {
     var __defers = {};
     $.__views.master = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        navBarHidden: true,
-        exitOnClose: true,
         title: "NG Informática",
         id: "master"
     });

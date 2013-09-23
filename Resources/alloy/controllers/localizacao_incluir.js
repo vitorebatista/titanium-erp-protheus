@@ -34,7 +34,6 @@ function Controller() {
     var __defers = {};
     $.__views.winLocal = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        navBarHidden: true,
         id: "winLocal",
         title: "Incluir Localizacação",
         modal: "true"
