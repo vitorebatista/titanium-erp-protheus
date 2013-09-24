@@ -7,5 +7,5 @@
 	"os:blackberry": {},
 	"os:ios": {},
 	"os:mobileweb": {},
-	"dependencies": {}
+	"dependencies": {"nl.fokkezb.loading":"1.6"}
 }

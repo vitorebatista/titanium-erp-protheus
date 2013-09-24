@@ -249,7 +249,7 @@ function installDatabase(config) {
     var dbName = config.adapter.db_name;
     Ti.API.debug('Installing sql database "' + dbFile + '" with name "' + dbName + '"');
     var db = Ti.Database.install(dbFile, dbName);
-    if (false === config.adapter.remoteBackup && false) {
+    if (false === config.adapter.remoteBackup && true) {
         Ti.API.debug('iCloud "do not backup" flag set for database "' + dbFile + '"');
         db.file.setRemoteBackup(false);
     }
@@ -298,7 +298,16 @@ var cache = {
 
 module.exports.beforeModelCreate = function(config, name) {
     if (cache.config[name]) return cache.config[name];
-    throw "No support for Titanium.Database in MobileWeb environment.";
+    if ("mobileweb" === Ti.Platform.osname || "undefined" == typeof Ti.Database) throw "No support for Titanium.Database in MobileWeb environment.";
+    config.adapter.db_file && installDatabase(config);
+    if (!config.adapter.idAttribute) {
+        Ti.API.info('No config.adapter.idAttribute specified for table "' + config.adapter.collection_name + '"');
+        Ti.API.info('Adding "' + ALLOY_ID_DEFAULT + '" to uniquely identify rows');
+        config.columns[ALLOY_ID_DEFAULT] = "TEXT UNIQUE";
+        config.adapter.idAttribute = ALLOY_ID_DEFAULT;
+    }
+    cache.config[name] = config;
+    return config;
 };
 
 module.exports.afterModelCreate = function(Model, name) {

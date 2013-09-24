@@ -25,7 +25,7 @@ function addTPS(){
 client.open('POST', 'https://someserver.com/someendpoint.asmx');
 client.send({xml: soapRequest});
 */
-/*
+
 	var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"+
 						"<MNTA055 Operation=\"3\" version=\"1.01\">"+
 						  "<MNTA055_TPS modeltype=\"FIELDS\" >"+
@@ -40,25 +40,27 @@ client.send({xml: soapRequest});
 						    "</TPS_NOME>"+
 						  "</MNTA055_TPS>"+
 						"</MNTA055>";
-						*/
-var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<MNTA055 Operation=\"3\" version=\"1.01\">" + "<MNTA055_TPS modeltype=\"FIELDS\" >" + "<TPS_FILIAL order=\"1\">" + "<value>01</value>" + "</TPS_FILIAL>" + "<TPS_CODLOC order=\"2\">" + "<value>" + $.textCodigo.getValue() + "</value>" + "</TPS_CODLOC>" + "<TPS_NOME order=\"3\">" + "<value>" + $.textNome.getValue() + "</value>" + "</TPS_NOME>" + "</MNTA055_TPS>" + "</MNTA055>";
+							
+	//var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<MNTA055 Operation=\"3\" version=\"1.01\">" + "<MNTA055_TPS modeltype=\"FIELDS\" >" + "<TPS_FILIAL order=\"1\">" + "<value>01</value>" + "</TPS_FILIAL>" + "<TPS_CODLOC order=\"2\">" + "<value>" + $.textCodigo.getValue() + "</value>" + "</TPS_CODLOC>" + "<TPS_NOME order=\"3\">" + "<value>" + $.textNome.getValue() + "</value>" + "</TPS_NOME>" + "</MNTA055_TPS>" + "</MNTA055>";
 						
 
-	var url = "http://192.168.0.158:8081/FWWSMODEL.apw?wsdl";
-	//var url = "http://177.204.17.99:8085/FWWSMODEL.apw?WSDL";
+	//var url = "http://192.168.0.158:8081/FWWSMODEL.apw?wsdl";
+	var url = "http://177.204.17.99:8085/FWWSMODEL.apw?WSDL";
 	
 	var client = Ti.Network.createHTTPClient({
 		// function called when the response data is available
 		onload : function(e) {
 			Ti.API.info("Received text: " + this.responseText);
 			Ti.API.info("STATUS: " + this.status);
+			Alloy.Globals.loading.hide();
 			
-			//alert('Registro inserido com sucesso!');
+			alert('Registro inserido com sucesso!');
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {
 			Ti.API.debug(e.error);
 			alert('Erro de comunicação, contacte seu administrador.');
+			Alloy.Globals.loading.hide();
 		},
 		onsendstream : function(e) {
 			Ti.API.info('ONSENDSTREAM - PROGRESS: ' + e.progress);
@@ -75,6 +77,7 @@ var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<MNTA055 Opera
 	};
 	
 	client.send(param);
+    Alloy.Globals.loading.show('Sincronizando com o servidor...', false);
 	
 	// Send the request.
 	//client.send({xml: soapRequest});
