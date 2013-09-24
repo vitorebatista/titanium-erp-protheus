@@ -1,7 +1,7 @@
 function WPATH(s) {
     var index = s.lastIndexOf("/");
     var path = -1 === index ? "nl.fokkezb.loading/" + s : s.substring(0, index) + "/nl.fokkezb.loading/" + s.substring(index + 1);
-    return path;
+    return true && 0 !== path.indexOf("/") ? "/" + path : path;
 }
 
 module.exports = [ {
@@ -19,6 +19,13 @@ module.exports = [ {
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         color: "#000"
+    }
+}, {
+    isApi: true,
+    priority: 1101.0002,
+    key: "Window",
+    style: {
+        navBarHidden: true
     }
 }, {
     isClass: true,
@@ -86,12 +93,5 @@ module.exports = [ {
         text: L("loadingMessage", "Loading.."),
         color: "#fff",
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-    }
-}, {
-    isClass: true,
-    priority: 10101.0011,
-    key: "loadingIndicator",
-    style: {
-        style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG
     }
 } ];

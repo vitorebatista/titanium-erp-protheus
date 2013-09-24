@@ -10,8 +10,7 @@ function Controller() {
             var __alloyId7 = Ti.UI.createTableViewRow({
                 height: "50dp",
                 backgroundColor: "#fff",
-                focusable: false,
-                selectionStyle: Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+                focusable: false
             });
             rows.push(__alloyId7);
             viewTPS ? __alloyId7.addEventListener("click", viewTPS) : __defers["__alloyId7!click!viewTPS"] = true;
@@ -43,9 +42,9 @@ function Controller() {
         $.__views.tblTPS.setData(rows);
     }
     function addRegTPS() {
-        var controller = true && Alloy.isTablet ? $.detail : Alloy.createController("localizacao_incluir");
+        var controller = Alloy.createController("localizacao_incluir");
         var win = controller.getView();
-        true && Alloy.isHandheld && Alloy.Globals.navgroup.open(win);
+        win.open();
     }
     function editRegTPS() {
         alert("edit");
@@ -63,6 +62,7 @@ function Controller() {
     var __defers = {};
     $.__views.winLocal = Ti.UI.createWindow({
         backgroundColor: "#fff",
+        navBarHidden: true,
         layout: "vertical",
         background: "#fff",
         color: "#fff",
@@ -70,12 +70,6 @@ function Controller() {
         title: "Localização"
     });
     $.__views.winLocal && $.addTopLevelView($.__views.winLocal);
-    $.__views.__alloyId5 = Ti.UI.createButton({
-        title: "Inserir",
-        id: "__alloyId5"
-    });
-    addRegTPS ? $.__views.__alloyId5.addEventListener("click", addRegTPS) : __defers["$.__views.__alloyId5!click!addRegTPS"] = true;
-    $.__views.winLocal.rightNavButton = $.__views.__alloyId5;
     $.__views.tblTPS = Ti.UI.createTableView({
         id: "tblTPS"
     });

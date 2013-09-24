@@ -1,7 +1,7 @@
 function WPATH(s) {
     var index = s.lastIndexOf("/");
     var path = -1 === index ? "nl.fokkezb.loading/" + s : s.substring(0, index) + "/nl.fokkezb.loading/" + s.substring(index + 1);
-    return path;
+    return true && 0 !== path.indexOf("/") ? "/" + path : path;
 }
 
 function Controller() {
@@ -86,6 +86,7 @@ function Controller() {
     var __defers = {};
     $.__views.loadingMask = Ti.UI.createWindow({
         backgroundColor: "#5000",
+        navBarHidden: true,
         backgroundImage: null,
         opacity: 1,
         id: "loadingMask"
@@ -121,7 +122,7 @@ function Controller() {
     });
     $.__views.loadingInner.add($.__views.loadingSpinner);
     $.__views.loadingIndicator = Ti.UI.createActivityIndicator({
-        style: Ti.UI.iPhone.ActivityIndicatorStyle.BIG,
+        style: Ti.UI.ActivityIndicatorStyle.BIG,
         id: "loadingIndicator"
     });
     $.__views.loadingSpinner.add($.__views.loadingIndicator);

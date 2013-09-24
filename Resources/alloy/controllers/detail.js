@@ -8,10 +8,18 @@ function Controller() {
     var exports = {};
     $.__views.detail = Ti.UI.createWindow({
         backgroundColor: "#fff",
+        navBarHidden: true,
         layout: "vertical",
         id: "detail"
     });
     $.__views.detail && $.addTopLevelView($.__views.detail);
+    $.__views.name = Ti.UI.createLabel({
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        color: "#000",
+        id: "name"
+    });
+    $.__views.detail.add($.__views.name);
     $.__views.height = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
