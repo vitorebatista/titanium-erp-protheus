@@ -1,8 +1,8 @@
 <Alloy>
-	<Window id="winLocal" title="Incluir Localizacação" class="container" modal="true">
+	<Window id="winLocalAdd" title="Incluir Localizacação" class="container" modal="true">
 		<TextField id="textCodigo" keyboardType= "Ti.UI.KEYBOARD_NUMBER_PAD" hintText="Código" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" left="10" width="90%" height="60" />
 		<TextField id="textNome" hintText="Nome" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="90" left="10" width="90%" height="60" />
-		<Button class="button" onClick="addTPS">Incluir</Button>
+		<Button class="button" top="150" onClick="addTPS">Incluir</Button>
 
 	</Window>
 </Alloy>

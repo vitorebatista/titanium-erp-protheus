@@ -9,7 +9,7 @@ function addRegTPS(e){
 
 	// open the detail windows
 	if (OS_IOS && Alloy.isHandheld) {
-		Alloy.Globals.navgroup.open(win);
+		Alloy.Globals.navgroup.open(win, {animated:true});
 	} else if (OS_ANDROID) {
 		win.open();
 	}

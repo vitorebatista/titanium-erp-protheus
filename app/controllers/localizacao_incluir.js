@@ -1,33 +1,25 @@
-/*var client = Ti.Network.createHTTPClient();
-	client.onload = function() {
-	var doc = this.responseXML.documentElement;
-	//manually parse the SOAP XML document
-};
-*/
+Ti.include('/include/suds.js');
+
 function addTPS(){
 	
-/*var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n" +
-"<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" \n" +
-"xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" \n" +
-"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \n" +
-"xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" \n" +
-"xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" \n" +
-"xmlns:wsse=\"http://schemas.xmlsoap.org/ws/2002/12/secext\"> \n" +
-"<SOAP-ENV:Body id=\"_0\"> \n" +
-"<GetUserDetailsReq> \n" +
-"<Request> \n" +
-"<SessionToken xsi:type=\"ns:IVRSessionToken\">XXXX</SessionToken> \n" +
-"</Request> \n" +
-"</GMGetUserDetailsReq> \n" +
-"</SOAP-ENV:Body> \n" +
-"</SOAP-ENV:Envelope>";
+	/*var window = Alloy.Globals.navgroup;
 
-client.open('POST', 'https://someserver.com/someendpoint.asmx');
-client.send({xml: soapRequest});
-*/
-
-	var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"+
-						"<MNTA055 Operation=\"3\" version=\"1.01\">"+
+	var label = Ti.UI.createLabel({
+	    top: 10,
+	    left: 10,
+	    width: 'auto',
+	    height: 'auto',
+	    text: 'Contacting currency rates web service...'
+	});
+	
+	window.add(label);
+	*/
+	//var url = "http://192.168.0.158:8081/FWWSMODEL.apw?wsdl";
+	var url = "http://177.204.17.99:8085/FWWSMODEL.apw";
+	
+	var operation = 'PUTXMLDATA';
+	
+	var soapRequest = "<MNTA055 Operation=\"3\" version=\"1.01\">"+
 						  "<MNTA055_TPS modeltype=\"FIELDS\" >"+
 						    "<TPS_FILIAL order=\"1\">"+
 						      "<value>01</value>"+
@@ -40,46 +32,89 @@ client.send({xml: soapRequest});
 						    "</TPS_NOME>"+
 						  "</MNTA055_TPS>"+
 						"</MNTA055>";
-							
-	//var soapRequest = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<MNTA055 Operation=\"3\" version=\"1.01\">" + "<MNTA055_TPS modeltype=\"FIELDS\" >" + "<TPS_FILIAL order=\"1\">" + "<value>01</value>" + "</TPS_FILIAL>" + "<TPS_CODLOC order=\"2\">" + "<value>" + $.textCodigo.getValue() + "</value>" + "</TPS_CODLOC>" + "<TPS_NOME order=\"3\">" + "<value>" + $.textNome.getValue() + "</value>" + "</TPS_NOME>" + "</MNTA055_TPS>" + "</MNTA055>";
-						
 
-	//var url = "http://192.168.0.158:8081/FWWSMODEL.apw?wsdl";
-	var url = "http://177.204.17.99:8085/FWWSMODEL.apw?WSDL";
-	
-	var client = Ti.Network.createHTTPClient({
-		// function called when the response data is available
-		onload : function(e) {
-			Ti.API.info("Received text: " + this.responseText);
-			Ti.API.info("STATUS: " + this.status);
-			Alloy.Globals.loading.hide();
-			
-			alert('Registro inserido com sucesso!');
-		},
-		// function called when an error occurs, including a timeout
-		onerror : function(e) {
-			Ti.API.debug(e.error);
-			alert('Erro de comunicação, contacte seu administrador.');
-			Alloy.Globals.loading.hide();
-		},
-		onsendstream : function(e) {
-			Ti.API.info('ONSENDSTREAM - PROGRESS: ' + e.progress);
-		},
-		timeout : 5000 // in milliseconds
-	});
-	// Prepare the connection.
-	client.open("POST", url);
-	
-	var param = {//1
-		"method" : "PUTXMLDATA",
-		"MODELID" : "MNTA055",
-		"MODELXML" : soapRequest
+	var callparams = {//1
+		USERLOGIN : "ADMIN",
+		USERTOKEN : "ADMIN", //VE9UVlM=", //
+		PASSWORD : "",
+		MODELID : "MNTA055",
+		MODELXML : Ti.Utils.base64encode(soapRequest).toString() //
 	};
 	
-	client.send(param);
-    Alloy.Globals.loading.show('Sincronizando com o servidor...', false);
+	var suds = new SudsClient({
+	    endpoint: url,
+	    targetNamespace: 'http://webservices.totvs.com.br/fwwsmodel.apw'
+	});
+		
+	try {
+		
+		Alloy.Globals.loading.show('Sincronizando com o servidor...', false);
+	    suds.invoke(operation, callparams, function(xmlDoc) {
+		Alloy.Globals.loading.hide();
+		
+	        var results = xmlDoc.documentElement.getElementsByTagName('PUTXMLDATARESULT');
+	        if (results && results.length>0) {
+	            var result = results.item(0);
+	            if (results.item(0).text = "true"){
+	            	alert('Registro inserido com sucesso!');
+	            	//label.text = "Registro inserido com sucesso!";
+	            }else{
+	            	alert('Registro inserido com sucesso: '+results.item(0).text);
+	            	//label.text = "Sucesso: "+results.item(0).text;
+	            }
+				AddCollection();
+				finishCallback();
+				
+	        } else {
+	        	results = xmlDoc.documentElement.getElementsByTagName('faultstring');
+	        	if (results && results.length>0) {
+					alert('Erro: '+results.item(0).text);
+					//label.text = "Erro: "+results.item(0).text;
+	          } else{
+				alert('Erro: '+this.responseData);
+				//label.text = "Erro: "+this.responseData;
+	          }
+	          
+	          Ti.API.info('XML: ' + this.responseData);
+	         
+	        }
+	    });
+	} catch(e) {
+	    Ti.API.error('Error: ' + e);
+	}
 	
-	// Send the request.
-	//client.send({xml: soapRequest});
+	
+    
+
 }
 
+
+function AddCollection(){
+    var table_TPS = Alloy.Collections.TPS;
+
+    // Create a new model for the todo collection
+    var info = Alloy.createModel('TPS', {
+        TPS_CODLOC : $.textCodigo.getValue(),
+        TPS_NOME : $.textNome.getValue()
+    });
+
+    // add new model to the global collection
+    table_TPS.add(info);
+
+    // save the model to persistent storage
+    info.save();
+
+    // reload the tasks
+    table_TPS.fetch();
+	//alert("inserido registro: "+$.textCodigo.getValue());
+    //closeWindow();
+}
+
+function finishCallback(){
+	if (OS_ANDROID) {
+		$.winLocalAdd.close();
+	} else {
+		//Alloy.Globals.navGroup.close();
+		//TODO REALIZAR RETORNO PARA O GRID
+	}
+};
