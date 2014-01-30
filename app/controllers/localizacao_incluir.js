@@ -38,7 +38,9 @@ function addTPS(){
 		USERTOKEN : "ADMIN", //VE9UVlM=", //
 		PASSWORD : "",
 		MODELID : "MNTA055",
-		MODELXML : Ti.Utils.base64encode(soapRequest).toString() //
+		MODELXML : Ti.Utils.base64encode(soapRequest).toString(),
+		MODELPK : "TPS_CODLOC",
+		TABLE : "TPS" //
 	};
 	
 	var suds = new SudsClient({
@@ -81,10 +83,7 @@ function addTPS(){
 	    });
 	} catch(e) {
 	    Ti.API.error('Error: ' + e);
-	}
-	
-	
-    
+	}	
 
 }
 
@@ -111,10 +110,7 @@ function AddCollection(){
 }
 
 function finishCallback(){
-	if (OS_ANDROID) {
-		$.winLocalAdd.close();
-	} else {
-		//Alloy.Globals.navGroup.close();
-		//TODO REALIZAR RETORNO PARA O GRID
-	}
+
+	$.winLocalAdd.close();	
+
 };

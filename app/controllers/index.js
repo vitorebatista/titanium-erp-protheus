@@ -1,3 +1,19 @@
+Ti.include('/include/suds.js');
+
+
+var table_SB1 = Alloy.Collections.SB1;
+var table_ST9 = Alloy.Collections.ST9;
+
+/*if (table_ST9.length == 0){
+	SyncST9();
+}
+*/
+
+if (table_SB1.length = 0){
+	SyncSB1();
+}
+	
+
 /*
 function IndexOpen(e) {
     //$.logo.init({ image: '/logo_ng.png', width: 161, height: 61 });
@@ -30,7 +46,7 @@ $.master.on('localizacao', function(e) {
 
 	// open the detail windows
 	if (OS_IOS && Alloy.isHandheld) {
-		Alloy.Globals.navgroup.open(win);
+		Alloy.Globals.navgroup.openWindow(win);
 	} else if (OS_ANDROID) {
 		win.open();
 	}
@@ -46,7 +62,8 @@ $.master.on('especialidade', function(e) {
 
 	// open the detail windows
 	if (OS_IOS && Alloy.isHandheld) {
-		Alloy.Globals.navgroup.open(win);
+		Alloy.Globals.navgroup.openWindow(win);
+		win.open();
 	} else if (OS_ANDROID) {
 		win.open();
 	}
@@ -58,10 +75,20 @@ $.master.on('especialidade', function(e) {
 if (OS_ANDROID) {
 	$.master.getView().open();
 } else {
-	$.index.open();
+	$.navgroup.open();
+	//$.index.open();
 }
 
 // runtime unit tests
 if (!ENV_PROD) {
 //	require('specs/index')($);
+}
+
+
+
+
+
+
+function SyncSB1(){
+	
 }

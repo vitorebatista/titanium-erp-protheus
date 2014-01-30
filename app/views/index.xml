@@ -19,9 +19,9 @@
 	
 	<!-- iPhone -->
 	<Window id="index" platform="ios" formFactor="handheld">
-	    <NavigationGroup id="navgroup">
+	    <NavigationWindow id="navgroup">
 	        <Require src="master" id="master"/>
-	    </NavigationGroup>
+	    </NavigationWindow>
    	</Window>
   
   	<!-- Android -->

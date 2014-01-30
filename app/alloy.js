@@ -10,4 +10,10 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 Alloy.Collections.TPS = Alloy.createCollection('TPS');
+Alloy.Collections.TPS.fetch();
+Alloy.Collections.ST9 = Alloy.createCollection('ST9');
+Alloy.Collections.ST9.fetch();
+Alloy.Collections.SB1 = Alloy.createCollection('SB1');
+Alloy.Collections.SB1.fetch();
+
 Alloy.Globals.loading = Alloy.createWidget("nl.fokkezb.loading");
