@@ -1,18 +1,44 @@
-Welcome to your Appcelerator Titanium Mobile Project
+# NgMobile
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+## Description
+
+Mobile development using Appcelerator Titanium, making integration with ERP modulo SIGAMNT Protheus (TOTVS)
+This integration uses MVC WebService developed in ADVPL language.
+
+### Community Driven
+
+I encourage everyone to send Pull Requests - keeping this app with new features.
 
 
+## Author
 
-----------------------------------
-Stuff our legal folk make us say:
+**Vitor Emanuel Batista**  
+email: vitorebatista@gmail.com 
 
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
+## Widgets
 
-Titanium is Copyright (c) 2008-2013 by Appcelerator, Inc. All Rights Reserved.
+This app use the following widgets:
+https://github.com/FokkeZB/nl.fokkezb.loading
+https://github.com/FokkeZB/nl.fokkezb.drawer
 
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
+## License
 
+    Copyright (c) 2013-2014 Vitor Emanuel Batista
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
