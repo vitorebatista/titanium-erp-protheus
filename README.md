@@ -2,7 +2,8 @@
 
 ## Description
 
-Mobile development using Appcelerator Titanium, making integration with ERP modulo SIGAMNT Protheus (TOTVS)
+Mobile development using Appcelerator Titanium, making integration with ERP modulo SIGAMNT Protheus (TOTVS).
+
 This integration uses MVC WebService developed in ADVPL language.
 
 ### Community Driven
@@ -18,7 +19,10 @@ email: vitorebatista@gmail.com
 ## Widgets
 
 This app use the following widgets:
+
+
 https://github.com/FokkeZB/nl.fokkezb.loading
+
 https://github.com/FokkeZB/nl.fokkezb.drawer
 
 ## License
