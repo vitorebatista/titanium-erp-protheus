@@ -1,0 +1,33 @@
+<Alloy>
+	<Window module="xp.ui" id="windowleft" role="leftWindow">
+      
+
+		<TableView id="table">
+            <TableViewSection id="sectionEmpresa" headerTitle="Empresa">
+				<TableViewRow onClick="openWindow" id="empresa">
+					<ImageView id="icoempresa" image="/icong.png" />
+					<Label id="titleempresa">NG Informática</Label>
+				</TableViewRow>
+                	
+            </TableViewSection>				
+            
+            <TableViewSection id="sectionCad" headerTitle="Cadastros">
+                <TableViewRow id="cadLocalizacao" onClick="openWindow" touchEnable="true" title="Localização"/>
+                <TableViewRow id="cadOrdem" onClick="openWindow" title="Ordem de Serviço"/>
+                <TableViewRow id="cadContador" onClick="openWindow" title="Informa Contador"/>
+            </TableViewSection>
+            <TableViewSection id="sectionCon" headerTitle="Consultas">
+            	<TableViewRow id="conLocalizacao" onClick="openWindow" title="Localização"/>
+                <TableViewRow id="conBens" onClick="openWindow" title="Bens"/>
+                <TableViewRow id="conOrdem" onClick="openWindow" title="Ordem de Serviço"/>
+            </TableViewSection>
+            <TableViewSection id="sectionRel" headerTitle="Relatórios">
+                <TableViewRow id="relCustoCC" onClick="openWindow" title="Custo por Serviço"/>
+                <TableViewRow id="relCustoBem" onClick="openWindow" title="Custo por Bem"/>
+            </TableViewSection>
+    	</TableView> 
+
+    </Window>
+
+	
+</Alloy>

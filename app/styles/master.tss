@@ -11,10 +11,4 @@
         fontSize: '24dp',
         fontWeight: 'bold'
     }
-},
-
-"#logo": {
-	width: 161, 
-	height: 61,
-	top:50 
 }

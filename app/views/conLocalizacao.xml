@@ -1,9 +1,9 @@
 <Alloy>
     <!--<NavigationGroup id="nav" platform="ios">-->
     <Window id="winLocal" title="Localização" > <!-- class="container" modal="true"-->
-		<RightNavButton platform="ios" >
+		<!-- <RightNavButton platform="ios" >
 			<Button onClick="addRegTPS">Inserir</Button>
-		</RightNavButton>    	
+		</RightNavButton>     -->	
   		<!--<Button id="btnAdd" onClick="addRegTPS" title="Inserir"  />-->
 		<TableView id="tblTPS" dataCollection="TPS">
 			<TableViewRow id="rowTPS" onClick="viewTPS">

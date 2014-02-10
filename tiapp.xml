@@ -7,13 +7,13 @@
     <url>http://www.ngi.com.br</url>
     <description>Aplicativo com processos do modulo SIGAMNT do ERP Protheus / Totvs</description>
     <copyright>2013 by vitorebatista</copyright>
-    <icon>logo_ng.png</icon>
+    <icon>icong.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
     <statusbar-hidden>false</statusbar-hidden>
-    <fullscreen>false</fullscreen>
-    <navbar-hidden>false</navbar-hidden>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
     <analytics>true</analytics>
     <guid>1ce14b83-8b45-47b3-9ce3-e536399b2ce1</guid>
     <property name="ti.ui.defaultunit" type="string">system</property>
@@ -37,7 +37,10 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="iphone">dk.napp.drawer</module>
+        <module platform="android">dk.napp.drawer</module>
+    </modules>
     <deployment-targets>
         <target device="android">true</target>
         <target device="blackberry">false</target>

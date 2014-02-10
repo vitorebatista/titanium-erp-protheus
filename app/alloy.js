@@ -17,3 +17,4 @@ Alloy.Collections.SB1 = Alloy.createCollection('SB1');
 Alloy.Collections.SB1.fetch();
 
 Alloy.Globals.loading = Alloy.createWidget("nl.fokkezb.loading");
+//Alloy.Globals.drawer = Alloy.createWidget("nl.fokkezb.drawer");

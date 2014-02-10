@@ -1,0 +1,39 @@
+"TableView":{
+	top: 20,
+	backgroundColor:'#423e3e',
+	color: 'white',
+	font: {
+        fontFamily:'Helvetica',
+        fontSize: '14dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    },
+}
+"TableViewRow": {
+    font: {
+        fontFamily:'Helvetica',
+        fontSize: '14dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    },
+    color: 'white'
+}
+"LeftNavButton":{
+	color: 'white'
+}
+"#windowleft":{
+	backgroundColor: '#423e3e'
+}
+"#icoempresa":{
+	left: '3%'
+}
+"#titleempresa":{
+	
+    font: {
+        fontFamily:'Helvetica',
+        fontSize: '14dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    },
+    color: 'white'
+}

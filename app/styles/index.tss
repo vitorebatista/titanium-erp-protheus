@@ -1,14 +1,34 @@
-"#index": {
-    height: Ti.UI.FILL,
-    top: "0dp",
-    fullscreen: false
-},
-".container": {
-	backgroundColor:"white"
-},
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
-}
+// "#index": {
+    // height: Ti.UI.FILL,
+    // top: "0dp",
+    // fullscreen: false
+// },
+// ".container": {
+	// backgroundColor:"white"
+// },
+// "Label": {
+	// width: Ti.UI.SIZE,
+	// height: Ti.UI.SIZE,
+	// color: "#000"
+// }
+// 
 
+"#drawer": {
+    openDrawerGestureMode: "OPEN_MODE_ALL",
+    closeDrawerGestureMode: "CLOSE_MODE_ALL",
+    leftDrawerWidth: 200,
+    shadowWidth: 40,
+    animationMode: "ANIMATION_ZOOM" 
+}
+"#drawer[platform=android]": {
+    openDrawerGestureMode: "OPEN_MODE_ALL",
+    closeDrawerGestureMode: "CLOSE_MODE_ALL",
+    leftDrawerWidth: 500,
+    shadowWidth: 40,
+    animationMode: "ANIMATION_NONE" //"ANIMATION_ZOOM"//"ANIMATION_SCALE"
+}
+"Window": {
+	barColor: '#4c66a4',
+    tintColor: 'orange', // iOS 7+ only
+    backgroundColor: 'white',
+}

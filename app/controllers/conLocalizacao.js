@@ -1,7 +1,7 @@
 function addRegTPS(e){
 	
 		// get the detail controller and window references
-	var controller = OS_IOS && Alloy.isTablet ? $.detail : Alloy.createController('localizacao_incluir');
+	var controller = OS_IOS && Alloy.isTablet ? $.detail : Alloy.createController('cadLocalizacao');
 	var win = controller.getView();
 	var table_TPS = Alloy.Collections.TPS;
 	//alert("add");

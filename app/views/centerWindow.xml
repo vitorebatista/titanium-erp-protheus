@@ -1,0 +1,20 @@
+<Alloy>
+    <NavigationWindow platform="ios" role="centerWindow">
+        <Window id="centerWindow">
+            <LeftNavButton>
+                <!-- <Button onClick="toggle">Menu</Button> -->
+                <ImageView onClick="toggle" id="icomenu" image="/icomenu.png" />
+            </LeftNavButton>
+            
+			<ImageView id="logo" image="/logo_ng.png" />
+
+            <!-- <RightNavButton>
+                <Button onClick="toggle">Right</Button>
+            </RightNavButton> -->
+        </Window>
+    </NavigationWindow>
+    
+    <View id="centerWindow" platform="android" role="centerWindow">
+        <ImageView id="logo" image="/logo_ng.png" />
+    </View>
+</Alloy>

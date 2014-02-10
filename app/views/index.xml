@@ -10,20 +10,35 @@
 -->
 
 
-<Alloy>
-	<!-- iPad -->
+<!-- <Alloy>
+	<!-- iPad ->
 	<SplitWindow id="index" platform="ios" formFactor="tablet">
 		<Require src="master" id="master"/>
 		<Require src="detail" id="detail"/>
 	</SplitWindow>
 	
-	<!-- iPhone -->
+	<!-- iPhone ->
 	<Window id="index" platform="ios" formFactor="handheld">
 	    <NavigationWindow id="navgroup">
 	        <Require src="master" id="master"/>
 	    </NavigationWindow>
    	</Window>
   
-  	<!-- Android -->
-    <Require id="master" src="master" platform="android"/>
+  	<!-- Android ->
+    
+</Alloy> -->
+<Alloy>
+    <Widget id="drawer" src="nl.fokkezb.drawer">
+
+		<!-- Menu na lateral esquerda -->
+        <Require src="leftWindow"/>
+        
+		<!-- Janela principal -->
+        <Require src="centerWindow"/>
+
+        <!-- <Window module="xp.ui" role="rightWindow">
+            <Label>I am right</Label>
+        </Window> -->
+
+    </Widget>
 </Alloy>
