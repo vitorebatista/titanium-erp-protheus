@@ -160,7 +160,7 @@ function onNavDrawerWinOpen(evt) {
         if (actionBar) {
             // Now we can do stuff to the actionbar  
             actionBar.setTitle('NG Informática');
-            actionBar.setLogo('/icomenu2x.png');
+            //actionBar.setLogo('/icomenu2x.png');
 
             // You have to save a reference to the drawer when setting the callback, using 'this'
             // will reference the activity, not the drawer
