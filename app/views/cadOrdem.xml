@@ -1,1 +1,12 @@
-<Alloy></Alloy>
+<Alloy>
+	<Window id="winCenter" title="Incluir O.S" class="container" modal="true" fullscreen="false" navBarHidden="false">
+        <LeftNavButton>
+            <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
+        </LeftNavButton>
+		<TextField id="textCodigo" keyboardType= "Ti.UI.KEYBOARD_NUMBER_PAD" hintText="Código do Bem" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" left="10" width="90%" height="60" />
+		<TextField id="textServiço" hintText="Serviço" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="90" left="10" width="90%" height="60" />
+		<TextArea id="textArea" top ="150" textAlign="left" hintText="Observação da Ordem de Serviço" width="95%" />
+		<Button class="button" top="200" onClick="addOrdem">Incluir</Button>
+
+	</Window>
+</Alloy>

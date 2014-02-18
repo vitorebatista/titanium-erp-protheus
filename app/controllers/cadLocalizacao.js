@@ -1,5 +1,19 @@
 Ti.include('/include/suds.js');
 
+function focusTextField() {
+    $.textCodigo.focus();
+}
+
+function closeKeyboard(e) {
+    e.source.blur();
+}
+
+
+function openLeftWindow(){
+	//Abre menu lateral esquerdo
+	Alloy.Globals.drawer['toggleLeftWindow']();
+}
+
 function addTPS(){
 	
 	/*var window = Alloy.Globals.navgroup;
@@ -64,6 +78,7 @@ function addTPS(){
 	            	alert('Registro inserido com sucesso: '+results.item(0).text);
 	            	//label.text = "Sucesso: "+results.item(0).text;
 	            }
+	            Alloy.Globals.loading.hide();
 				AddCollection();
 				finishCallback();
 				
@@ -72,17 +87,20 @@ function addTPS(){
 	        	if (results && results.length>0) {
 					alert('Erro: '+results.item(0).text);
 					//label.text = "Erro: "+results.item(0).text;
+					Alloy.Globals.loading.hide();
 	          } else{
 				alert('Erro: '+this.responseData);
 				//label.text = "Erro: "+this.responseData;
+				Alloy.Globals.loading.hide();
 	          }
 	          
-	          Ti.API.info('XML: ' + this.responseData);
+	          //Ti.API.info('XML: ' + this.responseData);
 	         
 	        }
 	    });
 	} catch(e) {
 	    Ti.API.error('Error: ' + e);
+	    Alloy.Globals.loading.hide();
 	}	
 
 }
@@ -111,6 +129,8 @@ function AddCollection(){
 
 function finishCallback(){
 
-	$.winLocalAdd.close();	
+	$.winCenter.close();	
 
+	//Abre menu para usuário escolher outra opção
+	Alloy.Globals.drawer['toggleLeftWindow']();
 };

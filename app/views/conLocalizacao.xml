@@ -1,6 +1,9 @@
 <Alloy>
     <!--<NavigationGroup id="nav" platform="ios">-->
-    <Window id="winLocal" title="Localização" > <!-- class="container" modal="true"-->
+    <Window id="winLocal" title="Localização" fullscreen="false" navBarHidden="false"> <!-- class="container" modal="true"-->
+        <LeftNavButton>
+            <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
+        </LeftNavButton>
 		<!-- <RightNavButton platform="ios" >
 			<Button onClick="addRegTPS">Inserir</Button>
 		</RightNavButton>     -->	

@@ -7,7 +7,7 @@
         fontSize: '14dp',
         fontStyle: 'normal',
         fontWeight: 'normal'
-    },
+    }
 }
 "TableViewRow": {
     font: {
@@ -18,6 +18,38 @@
     },
     color: 'white'
 }
+"TableView[platform=android]":{
+	backgroundColor:'#423e3e',
+	color: 'white',
+	font: {
+        fontFamily:'Helvetica',
+        fontSize: '16dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    }
+}
+
+"TableViewRow[platform=android]": {
+    font: {
+        fontFamily:'Helvetica',
+        fontSize: '16dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    },
+    height: "70",
+    color: 'white'
+}
+"TableViewSection[platform=android]": {
+    font: {
+        fontFamily:'Helvetica',
+        fontSize: '16dp',
+        fontStyle: 'normal',
+        fontWeight: 'normal'
+    },
+    height: "70",
+    color: 'white'
+}
+
 "LeftNavButton":{
 	color: 'white'
 }

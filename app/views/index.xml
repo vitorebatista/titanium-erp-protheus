@@ -28,6 +28,8 @@
     
 </Alloy> -->
 <Alloy>
+	
+	
     <Widget id="drawer" src="nl.fokkezb.drawer">
 
 		<!-- Menu na lateral esquerda -->
@@ -38,7 +40,8 @@
 
         <!-- <Window module="xp.ui" role="rightWindow">
             <Label>I am right</Label>
-        </Window> -->
+        </Window>  -->
 
     </Widget>
+    
 </Alloy>

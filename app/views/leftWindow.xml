@@ -1,7 +1,6 @@
 <Alloy>
 	<Window module="xp.ui" id="windowleft" role="leftWindow">
       
-
 		<TableView id="table">
             <TableViewSection id="sectionEmpresa" headerTitle="Empresa">
 				<TableViewRow onClick="openWindow" id="empresa">
@@ -26,7 +25,6 @@
                 <TableViewRow id="relCustoBem" onClick="openWindow" title="Custo por Bem"/>
             </TableViewSection>
     	</TableView> 
-
     </Window>
 
 	

@@ -1,3 +1,8 @@
+function openLeftWindow(){
+	//Abre menu lateral esquerdo
+	Alloy.Globals.drawer['toggleLeftWindow']();
+}
+
 function addRegTPS(e){
 	
 		// get the detail controller and window references

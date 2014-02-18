@@ -144,3 +144,30 @@ exports.openRightWindow = function() {
 		return $.instance.toggleRightWindow();
 	}
 };
+
+exports.addEventListener('open', onNavDrawerWinOpen);
+
+function onNavDrawerWinOpen(evt) {
+    this.removeEventListener('open', onNavDrawerWinOpen);
+
+    //Ti.API.info('Activity:');
+    //Ti.API.info(this.getActivity()); // Use the get activity method
+
+    if(this.getActivity()) {
+        // Also use the get method for the action bar
+        var actionBar = this.getActivity().getActionBar();
+
+        if (actionBar) {
+            // Now we can do stuff to the actionbar  
+            actionBar.setTitle('NG Informática');
+            actionBar.setLogo('/icomenu2x.png');
+
+            // You have to save a reference to the drawer when setting the callback, using 'this'
+            // will reference the activity, not the drawer
+            var myDrawer = this;
+            actionBar.setOnHomeIconItemSelected(function() {
+                myDrawer.toggleLeftWindow();
+           });
+        }
+    }    
+} 

@@ -18,17 +18,12 @@
     closeDrawerGestureMode: "CLOSE_MODE_ALL",
     leftDrawerWidth: 200,
     shadowWidth: 40,
-    animationMode: "ANIMATION_ZOOM" 
+    animationMode: "ANIMATION_NONE" 
 }
 "#drawer[platform=android]": {
     openDrawerGestureMode: "OPEN_MODE_ALL",
-    closeDrawerGestureMode: "CLOSE_MODE_ALL",
-    leftDrawerWidth: 500,
+    closeDrawerGestureMode: "CLOSE_MODE_MARGIN",
+    leftDrawerWidth: 350,
     shadowWidth: 40,
     animationMode: "ANIMATION_NONE" //"ANIMATION_ZOOM"//"ANIMATION_SCALE"
-}
-"Window": {
-	barColor: '#4c66a4',
-    tintColor: 'orange', // iOS 7+ only
-    backgroundColor: 'white',
 }
