@@ -1,3 +1,9 @@
+function openLeftWindow(){
+	//Abre menu lateral esquerdo
+	Alloy.Globals.drawer['toggleLeftWindow']();
+}
+
+
 function loadTableBens() {
 
 	try {

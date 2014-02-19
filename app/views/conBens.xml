@@ -1,6 +1,8 @@
 <Alloy>
-    <Window id="winConBens" title="Consulta de Bens" onOpen="loadTableBens">
-
+    <Window id="winConBens" onOpen="loadTableBens">
+        <LeftNavButton platform="ios">
+            <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
+        </LeftNavButton>
 		<TableView id="tblViewBens">
 		</TableView>
  

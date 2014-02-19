@@ -1,3 +1,8 @@
+"Window": {
+	barColor: '#4c66a4',
+    //tintColor: 'orange', // iOS 7+ only
+    backgroundColor: 'white',
+}
 "#winLocal":{
 	layout: 'vertical',
 	background: '#fff',

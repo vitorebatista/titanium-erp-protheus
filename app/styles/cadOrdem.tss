@@ -1,3 +1,8 @@
+"Window": {
+	barColor: '#4c66a4',
+    //tintColor: 'orange', // iOS 7+ only
+    backgroundColor: 'white',
+},
 "TextArea": {
 	width: '90%',
 	top: '10dp',

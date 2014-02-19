@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="winCenter" title="Incluir O.S" class="container" modal="true" fullscreen="false" navBarHidden="false">
+	<Window id="winCenter" class="container" modal="true" fullscreen="false" navBarHidden="false">
         <LeftNavButton>
             <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
         </LeftNavButton>

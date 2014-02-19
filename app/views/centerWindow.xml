@@ -1,5 +1,5 @@
 <Alloy>
-    <NavigationWindow platform="ios" role="centerWindow">
+    <NavigationWindow animationCenter="false" platform="ios" role="centerWindow">
         <Window id="centerWindow">
             <LeftNavButton>
                 <!-- <Button onClick="toggle">Menu</Button> -->

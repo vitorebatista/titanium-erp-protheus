@@ -1,6 +1,6 @@
 <Alloy>
-	<Window id="winCenter" title="Incluir Localizacação" exitOnClose="true" class="container" fullscreen="false" navBarHidden="false" onOpen="focusTextField">
-        <LeftNavButton>
+	<Window id="winCenter" exitOnClose="true" class="container" fullscreen="false" navBarHidden="false" onOpen="focusTextField">
+        <LeftNavButton platform="ios">
             <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
         </LeftNavButton>
         
