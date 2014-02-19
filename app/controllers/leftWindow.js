@@ -1,8 +1,10 @@
+Ti.include('/include/ngutilmobile.js');
+
 function rowWasClicked(e) {
     alert(e.row.title);
 }
 
-function openWindow(e){
+function openWindow(e) {
 	
 	//Fecha menu para apresentar somente o CenterWindow
 	Alloy.Globals.drawer['toggleLeftWindow']();
@@ -11,7 +13,7 @@ function openWindow(e){
 	if(Alloy.Globals.window){
 		Alloy.Globals.window.close();
 	}
-		
+	
 	if(e.source.id == 'cadLocalizacao')
 		Alloy.Globals.window = Alloy.createController('cadLocalizacao').getView();	
 	else if(e.source.id == 'cadOrdem')
@@ -28,10 +30,12 @@ function openWindow(e){
 		Alloy.Globals.window = Alloy.createController('relCustoCC').getView();
 	else if(e.source.id == 'relCustoBem')
 		Alloy.Globals.window = Alloy.createController('relCustoBem').getView();
+	else if(e.source.id == 'parIntegracao')
+		Alloy.Globals.window = Alloy.createController('parIntegracao').getView();
 		
 	//alert(e.source.id);
 
-	if(Alloy.Globals.window){
+	if(typeof Alloy.Globals.window != 'undefined'){
 		if (OS_ANDROID){
 			Alloy.Globals.centerWindow.add(Alloy.Globals.window);
 			//Alloy.Globals.window.addEventListener('open', onNavDrawerWinOpen);
@@ -44,7 +48,30 @@ function openWindow(e){
 		
 }
 
+function sincronismo() {
 
+   	var confirm = Titanium.UI.createAlertDialog({
+        title: 'Sincronismo de Dados',
+        message: 'Deseja prosseguir com o sincronismo de dados do aplicativo com o ERP?',
+        buttonNames: ['Confirma', 'Cancela'],
+        cancel: 1
+	});
+
+	confirm.addEventListener('click', function(e) {
+
+        if (e.cancel === e.index || e.cancel === true) {
+        	return false;
+    	}
+    	
+    	if (e.index === 0) {
+   			AppSyncERP();
+   		}
+    
+	});
+
+	confirm.show();
+
+}
 
 // function onNavDrawerWinOpen(evt) {
     // this.removeEventListener('open', onNavDrawerWinOpen);

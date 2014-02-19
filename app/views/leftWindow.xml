@@ -24,7 +24,13 @@
                 <TableViewRow id="relCustoCC" onClick="openWindow" title="Custo por Serviço"/>
                 <TableViewRow id="relCustoBem" onClick="openWindow" title="Custo por Bem"/>
             </TableViewSection>
+            <TableViewSection id="sectionParam" headerTitle="Configurações">
+                <TableViewRow id="parIntegracao" onClick="openWindow" title="Parametros de Integração"/>
+                <TableViewRow id="sincronismo" onClick="sincronismo" title="Sincronizar"/>
+            </TableViewSection>
     	</TableView> 
+    
+
     </Window>
 
 	
