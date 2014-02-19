@@ -1,1 +1,8 @@
-<Alloy></Alloy>
+<Alloy>
+    <Window id="winConBens" title="Consulta de Bens" onOpen="loadTableBens">
+
+		<TableView id="tblViewBens">
+		</TableView>
+ 
+    </Window>
+</Alloy>
