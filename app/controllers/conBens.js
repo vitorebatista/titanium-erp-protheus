@@ -72,3 +72,7 @@ function loadTableBens() {
 	}
 
 }
+
+function testeProjeto() {
+	alert("teste");
+}
