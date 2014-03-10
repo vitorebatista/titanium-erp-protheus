@@ -22,6 +22,8 @@ function openWindow(e) {
 		Alloy.Globals.window = Alloy.createController('cadContador').getView();
 	else if(e.source.id == 'conBens')
 		Alloy.Globals.window = Alloy.createController('conBens').getView();
+	else if(e.source.id == 'conProdutos')
+		Alloy.Globals.window = Alloy.createController('conProdutos').getView();		
 	else if(e.source.id == 'conLocalizacao')
 		Alloy.Globals.window = Alloy.createController('conLocalizacao').getView();
 	else if(e.source.id == 'conOrdem')

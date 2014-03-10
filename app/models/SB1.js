@@ -2,16 +2,18 @@ exports.definition = {
 
 	// definição da estrutura da collection
 	config: {
-		"columns": {
+		columns: {
 			"B1_FILIAL":"text",
 			"B1_COD":"text",
 			"B1_DESC":"text"
 		},
-		"adapter": {
-			"type": "sql",
-			"collection_name": "SB1"
+		adapter: {
+			type: "sql",
+			collection_name: "SB1",
+			idAttribute: "B1_COD"
 		}
 	},
+	
 
 	// função para deletar todos os itens da collection
 	extendCollection : function(Collection) {
@@ -20,7 +22,7 @@ exports.definition = {
             deleteAll : function() {
  
                 var collection = this;
- 
+ 				alert("delete");
                 var sql = "DELETE FROM " + collection.config.adapter.collection_name;
                 db = Ti.Database.open(collection.config.adapter.db_name);
                 db.execute(sql);

@@ -4,8 +4,8 @@
             <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
         </LeftNavButton>
         
-		<TextField id="textCodigo" keyboardType= "Ti.UI.KEYBOARD_NUMBER_PAD" hintText="Código Localização" top="15" left="10" width="95%" />
-		<TextField id="textNome" hintText="Nome Localização" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="110" left="10" width="95%" onReturn="closeKeyboard"/>
+		<TextField id="textCodigo" keyboardType= "Ti.UI.KEYBOARD_NUMBER_PAD" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" hintText="Código Localização" top="16" left="10" width="96%" />
+		<TextField id="textNome" hintText="Nome Localização" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="110" left="10" width="96%" onReturn="closeKeyboard"/>
 		<Button class="button" top="220" onClick="addTPS">Incluir</Button>
 
 	</Window>

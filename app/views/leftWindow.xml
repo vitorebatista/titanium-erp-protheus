@@ -16,9 +16,10 @@
                 <TableViewRow id="cadContador" onClick="openWindow" title="Informa Contador"/>
             </TableViewSection>
             <TableViewSection id="sectionCon" headerTitle="Consultas">
+            	<TableViewRow id="conOrdem" onClick="openWindow" title="Ordem de Serviço"/>
             	<TableViewRow id="conLocalizacao" onClick="openWindow" title="Localização"/>
                 <TableViewRow id="conBens" onClick="openWindow" title="Bens"/>
-                <TableViewRow id="conOrdem" onClick="openWindow" title="Ordem de Serviço"/>
+                <TableViewRow id="conProdutos" onClick="openWindow" title="Produtos"/>
             </TableViewSection>
             <TableViewSection id="sectionRel" headerTitle="Relatórios">
                 <TableViewRow id="relCustoCC" onClick="openWindow" title="Custo por Serviço"/>

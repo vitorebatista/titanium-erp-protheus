@@ -1,24 +1,26 @@
+
+
 function openLeftWindow(){
 	//Abre menu lateral esquerdo
 	Alloy.Globals.drawer['toggleLeftWindow']();
 }
 
 
-function loadTableBens() {
-
+function loadTableProdutos() {
+	
 	try {
 
-		var ST9 = Alloy.Collections.ST9; // instancia a tabela de bens - ST9
+		var SB1 = Alloy.Collections.SB1; // instancia a tabela de produtos - SB1
+		alert(SB1.length);
+		for(var i=0; i<SB1.length;i++) {
 
-		for(var i=0; i<ST9.length;i++) {
-
-			var assetCode = ST9.at(i).get("T9_CODBEM");
-			var assetName = ST9.at(i).get("T9_NOME");
-			var assetBranch = ST9.at(i).get("T9_FILIAL");
+			var productCode = SB1.at(i).get("B1_COD");
+			var productDescri = SB1.at(i).get("B1_DESC");
+			var productBranch = SB1.at(i).get("B1_FILIAL");
 
 			var myRow = Titanium.UI.createTableViewRow({
-			    id: assetBranch + assetCode,
-			    title: assetCode +" - " + assetName
+			    id: productBranch + productCode,
+			    title: productCode +" - " + productDescri
 			    // height: '100px',
 			    // padding: '0px',
 			    // width: '80%',
@@ -33,7 +35,7 @@ function loadTableBens() {
 			// });
 
 			myRow.addEventListener( "click", function(e){
-				alert("Código do bem: " + this.id );
+				alert("Código do produto: " + this.id );
 			});
 
 			/*var labelCodeName = Titanium.UI.createLabel({
@@ -64,7 +66,7 @@ function loadTableBens() {
 			myRow.add(labelFilial);
 			myRow.add(online);*/
 
-			$.tblViewBens.appendRow(myRow);
+			$.tblViewProdutos.appendRow(myRow);
 
 		}
 

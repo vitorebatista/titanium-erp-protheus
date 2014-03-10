@@ -5,3 +5,14 @@ Alloy.Globals.drawer.open();
 // Executa função de inicialização do app
 Ti.include('/include/ngutilmobile.js');
 SystemLoad();
+
+Titanium.Network.addEventListener('change', function(e) {
+    if(e.networkTypeName=='NONE')
+    {
+            alert("Verifique a sua conexão...");
+    }
+    else
+    {
+            //alert("Online");
+    }
+});

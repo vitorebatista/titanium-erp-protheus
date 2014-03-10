@@ -3,8 +3,13 @@
         <LeftNavButton platform="ios">
             <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
         </LeftNavButton>
-		<TableView id="tblViewBens">
+        
+        <!-- <SearchBar id="search" barColor="#000" showCancel="true" /> -->
+		<TableView id="tblViewBens" filterAttribute="title" hideSearchOnSelection="false" >
+			<SearchBar />
+			<TableViewRow id="list">
+			</TableViewRow>			
 		</TableView>
- 
+
     </Window>
 </Alloy>

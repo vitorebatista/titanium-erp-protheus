@@ -36,7 +36,7 @@
         fontStyle: 'normal',
         fontWeight: 'normal'
     },
-    height: "70",
+    height: "30dp",
     color: 'white'
 }
 "TableViewSection[platform=android]": {
@@ -46,7 +46,7 @@
         fontStyle: 'normal',
         fontWeight: 'normal'
     },
-    height: "70",
+    height: "30dp",
     color: 'white'
 }
 
