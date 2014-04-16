@@ -1,10 +1,10 @@
 exports.definition = {
 	config: {
-		"columns": {
+		columns: {
 			"TPS_CODLOC":"text",
 			"TPS_NOME":"text"
 		},
-		"adapter": {
+		adapter: {
 			"type": "sql",
 			"collection_name": "TPS"
 		}

@@ -56,7 +56,21 @@ function SudsClient(_options) {
       }
     }
     else if (isAppceleratorTitanium()) {
-      xhr = Titanium.Network.createHTTPClient();
+    	
+      xhr = Titanium.Network.createHTTPClient({
+     // function called when the response data is available
+     onload : function(e) {
+         Ti.API.info("Suds - Received text: " + this.responseText);
+     },
+     // function called when an error occurs, including a timeout
+     onerror : function(e) {
+         Ti.API.debug("Suds - " + e.error);
+         alert("Suds - error - "  + e.error);
+         Alloy.Globals.loading.hide();
+     },
+     timeout : 60000  // in milliseconds
+     
+ });
     }
     return xhr;
   }

@@ -14,7 +14,7 @@
 		<TableView id="tblViewProdutos" filterAttribute="title" dataCollection="SB1">
 			<SearchBar />
 			<!-- rowId="{id_toDoList} is a custom property in order to have a reference to the primary key of the records -->
-			<TableViewRow id="listRow" title="{B1_COD}" rowId="{B1_COD}">
+			<TableViewRow id="listRow" title="{B1_DESC}" rowId="{B1_COD}">
 				<View id="componentView">
 					
 	    			<Label id="lblValue" text="{B1_DESC}"></Label>

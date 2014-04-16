@@ -1,47 +1,60 @@
-// "#index": {
-    // height: Ti.UI.FILL,
-    // top: "0dp",
-    // fullscreen: false
-// },
-// ".container": {
-	// backgroundColor:"white"
-// },
-// "Label": {
-	// width: Ti.UI.SIZE,
-	// height: Ti.UI.SIZE,
-	// color: "#000"
-// }
-// 
-
-"#drawer": {
-    // openDrawerGestureMode: "OPEN_MODE_ALL",
-    // closeDrawerGestureMode: "CLOSE_MODE_ALL",
-    // leftDrawerWidth: 200,
-    // shadowWidth: 40,
-    // animationMode: "ANIMATION_ZOOM" 
-    openDrawerGestureMode: "OPEN_MODE_ALL",
-	closeDrawerGestureMode: "CLOSE_MODE_ALL",
-	leftDrawerWidth: 210,
-	rightDrawerWidth: 200,
-	animationMode: "ANIMATION_PARALLAX_FACTOR_5",
-	shouldStretchDrawer: false,
-	showShadow: true,
-	shadowWidth:"20dp",
-	animationVelocity: 630 //3 x drawer width/
+"#top": {
+	backgroundColor: "#141f3d",
+	height: "33.3%",
+	width: Ti.UI.FILL
 }
-"#drawer[platform=android]": {
-	openDrawerGestureMode: "OPEN_MODE_ALL",
-	closeDrawerGestureMode: "CLOSE_MODE_MARGIN",// IMPORTANT: Otherwise content in drawer cant be tapped /
-	leftDrawerWidth: Alloy.Globals.SCREEN_WIDTH, //200,
-	rightDrawerWidth: 200,
-	parallaxAmount: 0.3,
-	shouldStretchDrawer: false,
-	showShadow: true,
-	shadowWidth:"20dp",
-	animationVelocity: 600 //3 x drawer width*/
-    // openDrawerGestureMode: "OPEN_MODE_ALL",
-    // closeDrawerGestureMode: "CLOSE_MODE_MARGIN",
-    // leftDrawerWidth: Alloy.Globals.SCREEN_WIDTH,
-    // shadowWidth: 40,
-    // animationMode: "ANIMATION_NONE" //"ANIMATION_ZOOM"//"ANIMATION_SCALE"
+"#center": {
+	backgroundColor: "#141f3d",
+	height: "33.3%",
+	width: Ti.UI.FILL
+} 
+"#bottom": {
+	backgroundColor: "#141f3d",
+	height: "33.3%",
+	width: Ti.UI.FILL
+} ,
+".container": {
+    backgroundColor:"#141f3d",
+    layout: 'vertical'
+},
+"#logincnt": {
+    layout: 'vertical',
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    left: 0,
+    top: 0
+},
+"#userpass": {
+    layout: 'vertical',
+    width: Ti.UI.SIZE,
+    height: Ti.UI.SIZE,
+    top: 10
+},
+"TextField":{
+	margin: 20
+}
+"Window": {
+	barColor: '#141f3d'
+    //tintColor: 'orange', // iOS 7+ only
+},
+// "#login": {
+    // top: 10,
+    // image: '/ok.png',
+    // width: 180,
+    // height: 45,
+    // font: {
+        // fontFamily: "Courgette",
+        // fontSize: 20
+    // }
+// },
+"Label": {
+    top: 10,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    color: 'white'
+},
+"TextField":{
+	color: 'white'
+},
+"TextField":{
+	width: "90%"
 }

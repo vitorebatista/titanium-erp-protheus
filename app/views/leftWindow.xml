@@ -28,6 +28,7 @@
             <TableViewSection id="sectionParam" headerTitle="Configurações">
                 <TableViewRow id="parIntegracao" onClick="openWindow" title="Parametros de Integração"/>
                 <TableViewRow id="sincronismo" onClick="sincronismo" title="Sincronizar"/>
+                <TableViewRow id="logout" onClick="closeWindow" title="Log Out"/>
             </TableViewSection>
     	</TableView> 
     

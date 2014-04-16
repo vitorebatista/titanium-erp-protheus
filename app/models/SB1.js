@@ -8,9 +8,9 @@ exports.definition = {
 			"B1_DESC":"text"
 		},
 		adapter: {
-			type: "sql",
-			collection_name: "SB1",
-			idAttribute: "B1_COD"
+			"type": "sql",
+			"collection_name": "SB1",
+			"idAttribute": "B1_COD"
 		}
 	},
 	
@@ -22,7 +22,9 @@ exports.definition = {
             deleteAll : function() {
  
                 var collection = this;
- 				alert("delete");
+                
+ 				Ti.API.info("Deletando collection SB1");
+ 				
                 var sql = "DELETE FROM " + collection.config.adapter.collection_name;
                 db = Ti.Database.open(collection.config.adapter.db_name);
                 db.execute(sql);

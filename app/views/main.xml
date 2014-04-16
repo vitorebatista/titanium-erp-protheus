@@ -1,0 +1,18 @@
+<Alloy>
+	
+	
+    <Widget id="drawer" src="nl.fokkezb.drawer">
+
+		<!-- Menu na lateral esquerda -->
+        <Require src="leftWindow"/>
+        
+		<!-- Janela principal -->
+        <Require src="centerWindow"/>
+
+        <!-- <Window module="xp.ui" role="rightWindow">
+            <Label>I am right</Label>
+        </Window>  -->
+
+    </Widget>
+    
+</Alloy>

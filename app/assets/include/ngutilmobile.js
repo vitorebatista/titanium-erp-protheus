@@ -75,7 +75,8 @@ function SyncSB1() {
 			Alloy.Collections.SB1.deleteAll();
 
 			var doc = this.responseXML.documentElement.text;
-
+			Ti.API.info("Preparando para adicionar SB1");
+			Ti.API.info(doc);
 			while( doc.indexOf("Register") > -1  ) {
 
 				var ini = doc.indexOf("<Register>");
@@ -86,13 +87,20 @@ function SyncSB1() {
 				var productName = registro.substring( registro.indexOf("<Name>") + 6,registro.indexOf("</Name>") );
 
 				var model = Alloy.createModel('SB1', {B1_FILIAL: '01', B1_COD: productCode,B1_DESC: productName});
-
+			    
 				// cria novo registro para o bem na collection SB1
 				Alloy.Collections.SB1.add(model);
-
+				
+			    // save the model to persistent storage
+			    model.save();
+				
+				//Ti.API.info("adicionando sb1 - " + productName);
 				doc = doc.substring(fim,doc.length);
 
 			}
+			
+			// reload SB1
+			Alloy.Collections.SB1.fetch();
 
 	    });
 	} catch(e) {
@@ -136,7 +144,7 @@ function SystemLoad() {
 
 	// SINCRONISMO
 	if ( ParamCont('MV_SYNCINIC') == 'S' ) {
-		AppSyncERP();
+		//AppSyncERP();
 	}
 
 }

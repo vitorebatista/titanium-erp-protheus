@@ -1,0 +1,25 @@
+<Alloy>
+    <Window id="signupWin">
+
+		<View id="top">
+			<!-- <Label class="screentitle">Select one of the following options</Label> -->
+			<ImageView id="logo" image="/logo_ng1.png" />
+		</View>
+		
+        <View id="center">
+            
+                <TextField id="user" hintText="Your Email" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
+                <View id="passconfirm">
+                    <TextField id="pass" hintText="Choose password" passwordMask="true" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
+                    <TextField id="confirm" hintText="Confirm password" passwordMask="true" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
+                </View>
+                
+                
+                <Button onClick="doSignUp">Sign Up</Button>
+                <Button onClick="closeSignup">Cancel</Button>
+            
+        </View>
+        
+        <View id="bottom"></View>        
+    </Window>
+</Alloy>

@@ -50,6 +50,17 @@ function openWindow(e) {
 		
 }
 
+function closeWindow(){
+	
+	//Alloy.Globals.drawer['close']();
+    var args = {
+        modal: $.modal
+    };
+	var mainWin = Alloy.createController('index', args).getView('indexWin');
+	mainWin.open();
+	
+}
+
 function sincronismo() {
 
    	var confirm = Titanium.UI.createAlertDialog({

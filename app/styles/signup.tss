@@ -1,0 +1,35 @@
+"#top": {
+	backgroundColor: "#141f3d",
+	height: "33.3%",
+	width: Ti.UI.FILL
+},
+"#center": {
+	backgroundColor: "#141f3d",
+	height: "33.3%",
+	width: Ti.UI.FILL
+} ,
+"#bottom": {
+	backgroundColor: "#141f3d",
+	height: "33.3%",
+	width: Ti.UI.FILL
+} 
+// ".container": {
+    // backgroundColor:"#141f3d",
+    // layout: 'vertical'
+// },
+// "#signupcnt": {
+    // layout: 'vertical',
+    // left: 0,
+    // top: 0
+// },
+// "#passconfirm": {
+    // layout: 'vertical',
+    // width: Ti.UI.SIZE,
+    // height: Ti.UI.SIZE
+// }
+// "Window": {
+	// barColor: '#141f3d',
+    // //tintColor: 'orange', // iOS 7+ only
+    // backgroundColor: 'white',
+    // color:'white'
+// }

@@ -20,4 +20,3 @@ Alloy.Collections.NGMOBILEPARAM.fetch();
 
 Alloy.Globals.loading = Alloy.createWidget("nl.fokkezb.loading");
 Alloy.Globals.SCREEN_WIDTH  = Titanium.Platform.displayCaps.platformWidth * 0.8;
-//Alloy.Globals.drawer = Alloy.createWidget("nl.fokkezb.drawer");

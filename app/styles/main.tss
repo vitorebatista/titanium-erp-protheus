@@ -1,0 +1,24 @@
+
+"#drawer[platform=ios]": {
+    // openDrawerGestureMode: "OPEN_MODE_ALL",
+    // closeDrawerGestureMode: "CLOSE_MODE_ALL",
+    // leftDrawerWidth: 200,
+    // shadowWidth: 40,
+    // animationMode: "ANIMATION_ZOOM" 
+    openDrawerGestureMode: "OPEN_MODE_ALL",
+	closeDrawerGestureMode: "CLOSE_MODE_ALL",
+	leftDrawerWidth: 210,
+	rightDrawerWidth: 200,
+	animationMode: "ANIMATION_PARALLAX_FACTOR_5",
+	shouldStretchDrawer: false,
+	showShadow: true,
+	shadowWidth:"20dp",
+	animationVelocity: 630 //3 x drawer width/
+}
+"#drawer[platform=android]": {
+    openDrawerGestureMode: "OPEN_MODE_ALL",
+    closeDrawerGestureMode: "CLOSE_MODE_MARGIN",
+    leftDrawerWidth: Alloy.Globals.SCREEN_WIDTH,
+    shadowWidth: 40,
+    animationMode: "ANIMATION_NONE" //"ANIMATION_ZOOM"//"ANIMATION_SCALE"
+}

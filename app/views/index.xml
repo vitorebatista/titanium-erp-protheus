@@ -1,47 +1,26 @@
-<!--<Alloy>
-	<Window onOpen="IndexOpen" class="container">
-		 --<!--<Widget src="com.appcelerator.bouncylogo" id="logo" /> ->
-		 <ImageView id="logo" image="/logo_ng.png" />
-		 
-		 <Button id="btnLocalizacao" onClick="Localizacao" title="Localização" top="180" width="90%" height="50" />
-		 <Button id="btnEspecialidade" onClick="Especialidade" title="Especialidade" top="250" width="90%" height="50" />
-	</Window>
-</Alloy>
--->
-
-
-<!-- <Alloy>
-	<!-- iPad ->
-	<SplitWindow id="index" platform="ios" formFactor="tablet">
-		<Require src="master" id="master"/>
-		<Require src="detail" id="detail"/>
-	</SplitWindow>
-	
-	<!-- iPhone ->
-	<Window id="index" platform="ios" formFactor="handheld">
-	    <NavigationWindow id="navgroup">
-	        <Require src="master" id="master"/>
-	    </NavigationWindow>
-   	</Window>
-  
-  	<!-- Android ->
-    
-</Alloy> -->
 <Alloy>
 	
-	
-    <Widget id="drawer" src="nl.fokkezb.drawer">
+    <Window id="indexWin" class="container">
+		<View id="top">
+			<!-- <Label class="screentitle">Select one of the following options</Label> -->
+			<ImageView id="logo" image="/logo_ng1.png" />
+		</View>
+        <View id="center">
+            <View id="logincnt">
+                <View id="userpass">
+                    <TextField id="user" hintText="Email" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
+                    <TextField id="pass" hintText="Password" passwordMask="true" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"/>
+                </View>
+                
+                
+				<!-- <Label id="login" class="greenBtnLabel">Login</Label> -->
+                
+                <Button onClick="doLogin">Log In</Button>
+                <Label id="signupLabel" class="link">You don't have an account? Sign up!</Label>
+            </View>
+        </View>
+        <View id="bottom"></View>
+    </Window>
 
-		<!-- Menu na lateral esquerda -->
-        <Require src="leftWindow"/>
-        
-		<!-- Janela principal -->
-        <Require src="centerWindow"/>
-
-        <!-- <Window module="xp.ui" role="rightWindow">
-            <Label>I am right</Label>
-        </Window>  -->
-
-    </Widget>
-    
+    <!-- <Require type="widget" src="com.appcelerator.davidecassenti.modalwindow" id="modal" /> -->
 </Alloy>

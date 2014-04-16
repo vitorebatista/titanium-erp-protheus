@@ -3,13 +3,17 @@
         <LeftNavButton>
             <ImageView onClick="openLeftWindow" id="icomenu" image="/icomenu.png" />
         </LeftNavButton>
-		<TextField id="textBem" keyboardType= "Ti.UI.KEYBOARD_NUMBER_PAD" hintText="Código do Bem" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" left="10" width="90%" height="60" />
-		<TextField id="textData" hintText="Nome" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="90" left="10" width="90%" height="60" />
-		<Picker id="datePicker" type="Ti.UI.PICKER_TYPE_DATE_AND_TIME" platform="ios"  height="30"/>
-		<Picker id="datePicker" type="Ti.UI.PICKER_TYPE_DATE" platform="android"/>
-		<Picker id="timePicker" type="Ti.UI.PICKER_TYPE_TIME" platform="android"/>
+		<ScrollView id="scrollView" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="false" height="100%" width="100%">
 
-		<Button class="button" onClick="addContador">Incluir</Button>
-
+			<TextField id="textBem" keyboardType= "Ti.UI.KEYBOARD_NUMBER_PAD" hintText="Código do Bem" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="15" left="10" width="90%" height="60" />
+			<TextField id="textData" hintText="Data" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="100" left="10" width="90%" height="60" />
+			<TextField id="textHora" hintText="Hora" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="185" left="10" width="90%" height="60" />
+			<TextField id="textContador" hintText="Contador" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="270" left="10" width="90%" height="60" />
+			<Picker id="datePicker" type="Ti.UI.PICKER_TYPE_DATE_AND_TIME" platform="ios" top="350" height="30"/>
+			<Picker id="datePicker" type="Ti.UI.PICKER_TYPE_DATE" platform="android"/>
+			<Picker id="timePicker" type="Ti.UI.PICKER_TYPE_TIME" platform="android"/>
+	
+			<Button class="button" top="355" onClick="addContador">Incluir</Button>
+		</ScrollView>
 	</Window>
 </Alloy>
