@@ -2,9 +2,9 @@
 
 ## Description
 
-Mobile development using Appcelerator Titanium, making integration with ERP modulo SIGAMNT Protheus (TOTVS).
+Mobile development using [Appcelerator Titanium] (http://www.appcelerator.com/), making integration with ERP modulo SIGAMNT Protheus ([TOTVS] (http://www.totvs.com)).
 
-This integration uses MVC WebService developed in ADVPL language.
+This integration uses MVC WebService developed in [AdvPL] (http://tdn.totvs.com/display/tec/AdvPL) language.
 
 ### Community Driven
 
@@ -16,14 +16,16 @@ I encourage everyone to send Pull Requests - keeping this app with new features.
 **Vitor Emanuel Batista**  
 email: vitorebatista@gmail.com 
 
+## Modules
+
+* [dk.napp.drawer] (https://github.com/viezel/NappDrawer)
+
 ## Widgets
 
 This app use the following widgets:
 
-
-https://github.com/FokkeZB/nl.fokkezb.loading
-
-https://github.com/FokkeZB/nl.fokkezb.drawer
+* [nl.fokkezb.loading] (https://github.com/FokkeZB/nl.fokkezb.loading)
+* [nl.fokkezb.drawer] (https://github.com/FokkeZB/nl.fokkezb.drawer)
 
 ## License
 
